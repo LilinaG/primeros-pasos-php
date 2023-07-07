@@ -77,19 +77,100 @@ echo "El numero menor es: " . $numeroMenor;
 //Crear un función que convierta en minúsculas todas las letras de un texto.
 
 function minusculas ($texto) {
-    $texto1 = strtolower($texto);
-    return $texto1;
+    $textoMinusc = strtolower($texto);
+    return $textoMinusc;
 }
 $texto2= "HOLA MUNDO";
-$textoMinuculas 
-echo $texto1;
+$textoMinusc = minusculas($texto2);
+echo $textoMinusc;
 
 //Crear una función que convierta en mayúsculas todas las letras de un texto.
+
+function mayusculas ($texto) {
+    $textoMayusc = strtoupper($texto);
+    return $textoMayusc;
+}
+$texto2= "convertir este texto a mayúsculas";
+$textoMayusc = mayusculas($texto2);
+echo $textoMayusc;
+
+
 //Crear una función que reciba un array de nombres y que convierta la primera letra de cada nombre
 //en mayúscula.
+
+function nombresPersona () {
+    $nombres = array("maría", "raúl", "arantxa", "cristina", "arturo");
+    $nombresMayuscula = array_map('ucfirst', $nombres);
+    print_r($nombresMayuscula);
+}
+nombresPersona();
+
 //Crear una clase coche con sus atributos y un atributo puede ser de tipo array
+
+class Coche {
+    public $marca;
+    public $numPuertas;
+    public $colores;
+
+
 //Crear una función que devuelva la marca del carro.
+
+    public function obtenerMarca() {
+        return $this->marca;
+}
+} 
+$coche = new Coche();
+$coche->marca = "Seat";
+
+$marcaCoche = $coche->obtenerMarca();
+echo "Marca del coche: " . $marcaCoche;
+
+
 //Crear una función que devuelva la cantidad de puertas que tiene el carro.
+
+class Coche2 {
+    public $marca;
+    public $numPuertas;
+    public $colores;
+
+    public function obtenerNumPuertas() {
+        return $this->numPuertas;
+    }
+}
+
+$coche2 = new Coche2();
+$coche2->numPuertas = 5;
+
+$numPuertasCoche2 = $coche2->obtenerNumPuertas();
+echo "Número de puertas: " . $numPuertasCoche2;
+
 //Crear una función que devuelva un atributo del array.
+
+class Coche3 {
+    public $marca;
+    public $numPuertas;
+    public $colores;
+
+    public function obtenerColor($indice) {
+        if (isset($this->colores[$indice])) {
+            return $this->colores[$indice];
+        } else {
+            return null;
+        }
+    }
+}
+
+$coche = new Coche3();
+$coche->marca = "Toyota";
+$coche->colores = array("Rojo", "Azul", "Negro");
+
+$color = $coche->obtenerColor(1);
+
+if ($color != null) {
+    echo "Color obtenido: " . $color;
+} else {
+    echo "No se encontró el color solicitado.";
+}
+
 
 ?>

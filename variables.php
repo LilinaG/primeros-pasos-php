@@ -58,8 +58,8 @@ var_dump($Ravenclaw);
 $promedio = (8 + 9.5 + 9 + 10 + 8) / 5;
 var_dump($promedio); //FLOAT
 
-$nombre_completo = $nombre . " " .
-var_dump($nombre_completo); //NULL porque le falta el ;
+$nombre_completo = $nombre . " " .;
+var_dump($nombre_completo); 
 
 $apellido;
 var_dump($apellido); //STRING
